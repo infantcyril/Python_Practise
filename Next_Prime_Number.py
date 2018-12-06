@@ -67,7 +67,7 @@ Expected Output:
 1031
 ------------------
 Sample Input :
-(2,5)
+(0,5)
 
 Expected Output:
 11
