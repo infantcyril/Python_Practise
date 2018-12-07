@@ -13,10 +13,13 @@ def greet(a):
         if all(x.isalpha() or x.isspace() for x in Name):
             if currenttime.hour < 12:
                 print("Good Morning", Name.split()[0])
-            elif (12 < currenttime.hour <= 16):
+            elif (12 <= currenttime.hour <= 16):
                 print("Good Afternoon", Name.split()[0])
-            elif(16 < currenttime.hour <= 12):
+            elif(16 < currenttime.hour <= 19):
                 print("Good Evening", Name.split()[0])
+            elif(19 < currenttime.hour <= 23):
+                print("Good Night", Name.split()[0])
+
             FLAG = 1
         if (FLAG == 0):        
             print("Please enter a Valid name")
