@@ -1,24 +1,25 @@
 pi = 3.14
 check_area = 0
-while (check_area == 0):
-    check_area = 1
+area = 0
+def radius_circle(check,area,pi):
+    check_area = 0
+    while (check_area == 0):
+        check_area = 1
 
-    try:
-        area = float(input("Enter the area of the circle:"))
-        if(area<0):
+        try:
+            area = float(input("Enter the area of the circle:"))
+            if(area<0):
+                check_area = 0
+                print("Area of a Circle cannot be a negative value")
+                continue
+
+        except ValueError:
+            print("Enter a Valid Input")
             check_area = 0
-            print("Area of a Circle cannot be a negative value")
-            continue
-
-    except ValueError:
-        print("Enter a Valid Input")
-        check_area = 0
-
-def radius_circle(area,pi):
     radius_Square = (area)/pi
     radius = radius_Square ** 0.5
     print("The Radius of the Circle with Area = %.3f"  % area, "is: %.3f" % radius)
-radius_circle(area,pi)
+radius_circle(check_area,area,pi)
 
 '''
 TEST CASES:
