@@ -1,27 +1,29 @@
 check_a = 0
-while (check_a == 0):
-    try:
-        check_a = 1
-        a = int(input("Enter the Number from where you want to start searching: "))
-        if (a <= 2):
+a = 0
+def prim(check,a):
+    check_a = 0
+    while (check_a == 0):
+        try:
+            check_a = 1
+            a = int(input("Enter the Number from where you want to start searching: "))
+            if (a <= 2):
+                check_a = 0
+                print("Please enter a value greater than 2, There is no Prime number before", a)
+                continue
+        except ValueError:
+            print("Input should be a Positive Integer Value")
             check_a = 0
-            print("Please enter a value greater than 2, There is no Prime number before", a)
-            continue
-    except ValueError:
-        print("Input should be a Positive Integer Value")
-        check_a = 0
-c = []
-def Prime3(a,c):
-    for num in range(1,a):
-        for i in range(2,num):
-            if(num % i) == 0:
+
+
+    for x in range((a-1),1,-1):
+        for num in range(2,x):
+            if(x%num == 0):
                 break
         else:
-            c.append(num)
+            print("The prime number that comes first when we count backwards from" ,a, "is:",x)
+            break
             
-    print ("The prime number that comes first when we count backwards from", a,"is:" , (max(c)))
-Prime3(a,c)
-
+prim(check_a,a)
 '''
 TEST CASE:
 Sample Input : 3 || Expected Output: The prime number that comes first when we count backwards from 3 is:2
